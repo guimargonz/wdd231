@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 - Course Home Page - Guilherme Gonzaga</title>
+    <meta name="description" content="Course home page for WDD 231, demonstrating HTML, CSS, and JavaScript skills.">
+    <meta name="author" content="Guilherme Gonzaga">
+    <meta name="keywords" content="WDD 231, Web Development, HTML, CSS, JavaScript, Course Home Page">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css"> <!-- Optional, but good practice -->
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript (defer ensures HTML is parsed first) -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/courses.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/profile.webp" alt="A small photo of Guilherme Gonzaga" id="profile-photo">
+        <h1><span>Guilherme Gonzaga</span> - WDD 231</h1>
+        <button id="menu-button" aria-label="Toggle navigation menu">☰</button>
+    </header>
+
+    <nav>
+        <ul id="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#">Chamber (Week 2)</a></li>
+            <li><a href="#">Final (Week 6)</a></li>
+            <li><a href="https://github.com/guimargonz" target="_blank">GitHub Profile</a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="hero">
+             <h2>Welcome to My Course Portal</h2>
+             <p>This page showcases my work and progress in WDD 231: Web Frontend Development I.</p>
+        </section>
+
+        <section id="course-info">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons">
+                <button id="filter-all">All Courses</button>
+                <button id="filter-wdd">WDD Courses</button>
+                <button id="filter-cse">CSE Courses</button>
+            </div>
+            <div id="course-cards-container">
+                <!-- Course cards will be dynamically inserted here by JavaScript -->
+            </div>
+            <p id="total-credits-display">Total Credits for Displayed Courses: <span id="credits-value">0</span></p>
+        </section>
+
+        <section id="learning-resources">
+            <h2>Learning & Web Dev Resources</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank">MDN Web Docs</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
+                <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+                <li><a href="https://caniuse.com/" target="_blank">Can I use... (Browser Compatibility)</a></li>
+                <li><a href="https://codepen.io/" target="_blank">CodePen</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>©<span id="currentyear"></span> • Guilherme Gonzaga • Rio Grande do Sul, Brazil</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+</html>

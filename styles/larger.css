@@ -1,0 +1,75 @@
+@media (min-width: 768px) { /* Adjust breakpoint as needed */
+
+    header {
+        /*justify-content: flex-start; /* Align items to the start */
+        padding: 1rem 2rem;
+    }
+
+    header #profile-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    header h1 {
+        font-size: 2em;
+        /* margin-left: 1.5rem; */ /* If hamburger is removed */
+    }
+
+    /* Hide hamburger, show horizontal nav */
+    #menu-button {
+        display: none;
+    }
+
+    nav ul {
+        display: flex; /* Horizontal layout */
+        justify-content: center; /* Or flex-start, flex-end */
+    }
+
+    nav ul li {
+        flex-grow: 0; /* Don't allow items to grow */
+    }
+
+    nav ul li a {
+        border-bottom: none; /* Remove bottom border from mobile */
+        border-right: 1px solid rgba(255, 255, 255, 0.1); /* Optional separator */
+        padding: 1rem 1.5rem;
+    }
+    nav ul li:last-child a {
+        border-right: none;
+    }
+
+    main {
+        max-width: 1200px; /* Limit content width on large screens */
+        margin: 0 auto; /* Center main content */
+        padding: 2rem;
+    }
+    
+    /* Optional: Grid layout for main sections */
+    /*
+    main {
+        display: grid;
+        grid-template-columns: 1fr; For single column by default
+    }
+    main > section { margin-bottom: 0; } // Reset if grid handles spacing
+    */
+
+    /* Example for Course Cards in a grid */
+    #course-cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+        gap: 1rem;
+    }
+
+    #course-cards-container .course-card {
+        margin-bottom: 0; /* Gap property handles spacing */
+    }
+}
+
+@media (min-width: 1024px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+     #course-cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
