@@ -47,7 +47,7 @@ header #profile-photo {
     border: 2px solid var(--accent-color);
 }
 
-header h1 {
+header h2 {
     font-family: var(--font-heading);
     font-size: 1.5em;
     margin: 0;
