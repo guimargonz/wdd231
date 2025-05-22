@@ -1,0 +1,309 @@
+/* Global Variables & Styles */
+:root {
+    --primary-color: #0A3655;  /* Deep Blue */
+    --secondary-color: #1E88E5; /* Brighter Blue */
+    --accent1-color: #FFB300; /* Amber/Gold */
+    --accent2-color: #4CAF50; /* Green */
+    --text-light: #F5F5F5;
+    --text-dark: #333333;
+    --background-light: #FFFFFF;
+    --background-medium: #ECEFF1; /* Light Gray */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+
+    --gold-member-bg: #FFF8E1;
+    --gold-member-border: #FFD54F;
+    --silver-member-bg: #F5F5F5;
+    --silver-member-border: #B0BEC5;
+    --bronze-member-bg: #E8F5E9;
+    --bronze-member-border: #A5D6A7;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+    color: var(--text-dark);
+    background-color: var(--background-medium);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes bottom space under images */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    color: var(--accent1-color);
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+#chamber-logo {
+    width: 50px; /* Adjust as needed */
+    height: 50px;
+    margin-right: 0.5rem;
+    border-radius: 5px; /* Optional */
+}
+
+.chamber-name h1 {
+    font-size: 1.2em;
+    margin: 0;
+    color: var(--text-light);
+}
+.chamber-name p {
+    font-size: 0.8em;
+    margin: 0;
+    color: var(--accent1-color);
+}
+
+/* Navigation - Mobile */
+#menu-button {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Hidden by default */
+    background-color: var(--secondary-color); /* Dropdown background */
+    position: absolute; /* For dropdown effect */
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+nav ul.open {
+    display: block;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    color: var(--text-light);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+nav ul li a:hover, nav ul li a.active {
+    background-color: var(--accent1-color);
+    color: var(--primary-color);
+}
+nav ul li a.active {
+    font-weight: bold;
+}
+
+
+/* Main Content */
+main {
+    padding: 1rem;
+}
+.directory-main h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* View Toggle Buttons */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.view-toggle button {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--secondary-color);
+    background-color: var(--background-light);
+    color: var(--secondary-color);
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.view-toggle button.active-view {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+.view-toggle button:hover:not(.active-view) {
+    background-color: var(--background-medium);
+}
+
+
+/* Members Container - Shared */
+#members-container {
+    /* Transitions for smooth view changes */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Member Card/Item Base Styling */
+.member-card, .member-list-item {
+    background-color: var(--background-light);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem; /* For list view or single column grid */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center; /* Default for card, can be overridden for list */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.member-card img, .member-list-item img {
+    width: 100px; /* Adjust as needed */
+    height: 100px;
+    object-fit: contain; /* Or cover, depending on logos */
+    margin-bottom: 0.75rem;
+    border: 1px solid #eee;
+    padding: 5px;
+}
+.member-card h3, .member-list-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.2em;
+}
+.member-card p, .member-list-item p {
+    font-size: 0.9em;
+    margin-bottom: 0.25rem;
+    color: #555;
+}
+.member-card .website-link, .member-list-item .website-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.7rem;
+    background-color: var(--accent1-color);
+    color: var(--primary-color);
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+ .member-card .website-link:hover, .member-list-item .website-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    text-decoration: none;
+}
+.membership-level {
+    font-size: 0.8em;
+    font-style: italic;
+    margin-top: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    display: inline-block; /* So it doesn't take full width */
+}
+
+/* Membership Level Specific Styling */
+.member-level-1 { /* Bronze */
+    border-left: 5px solid var(--bronze-member-border);
+}
+.member-level-1 .membership-level {
+    background-color: var(--bronze-member-bg);
+    color: darken(var(--bronze-member-border), 20%);
+}
+.member-level-2 { /* Silver */
+    border-left: 5px solid var(--silver-member-border);
+}
+.member-level-2 .membership-level {
+    background-color: var(--silver-member-bg);
+    color: darken(var(--silver-member-border), 20%);
+}
+.member-level-3 { /* Gold */
+    border-left: 5px solid var(--gold-member-border);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Enhanced shadow for gold */
+}
+.member-level-3 .membership-level {
+    background-color: var(--gold-member-bg);
+    color: darken(var(--gold-member-border), 20%);
+}
+
+
+/* List View Specific Styling (when #members-container has .list-view) */
+#members-container.list-view .member-list-item {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    align-items: center; /* Align items vertically */
+    text-align: left; /* Align text to the left */
+    padding: 0.75rem;
+}
+
+#members-container.list-view .member-list-item img {
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
+    margin-bottom: 0;
+}
+
+#members-container.list-view .member-list-item .member-info {
+    flex-grow: 1; /* Allow text content to take remaining space */
+}
+ #members-container.list-view .member-list-item h3 {
+    font-size: 1.1em;
+ }
+#members-container.list-view .member-list-item p {
+    margin-bottom: 0.1rem;
+}
+#members-container.list-view .member-list-item .website-link {
+    margin-top: 0.3rem;
+}
+#members-container.list-view .member-list-item .membership-level {
+    margin-left: auto; /* Push level to the right */
+    white-space: nowrap;
+    align-self: flex-start; /* Align to top in case text wraps */
+}
+
+
+/* Grid View (default, #members-container.grid-view) - handled by media query mostly */
+#members-container.grid-view .member-card {
+    /* Styles already defined for member-card are good for mobile single column */
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-size: 0.85em;
+}
+.footer-content {
+    margin-bottom: 1rem;
+}
+.contact-info p, .developer-info p {
+    margin: 0.3rem 0;
+    color: #ccc; /* Slightly dimmer for less emphasis */
+}
+.developer-info #currentyear, .developer-info #lastModified {
+    font-weight: bold;
+}
+.social-links img {
+    width: 24px; /* Adjust size of social icons */
+    height: 24px;
+    margin: 0 0.5rem;
+    filter: invert(90%) sepia(10%) saturate(100%) hue-rotate(180deg) brightness(100%) contrast(90%); /* Makes them light */
+}

@@ -1,0 +1,78 @@
+@media (min-width: 768px) {
+    /* Header */
+    #chamber-logo {
+        width: 70px;
+        height: 70px;
+    }
+    .chamber-name h1 {
+        font-size: 1.8em;
+    }
+    .chamber-name p {
+        font-size: 1em;
+    }
+
+    /* Navigation - Desktop */
+    #menu-button {
+        display: none; /* Hide hamburger */
+    }
+    nav {
+        display: flex; /* To align items in header if needed */
+        align-items: center;
+    }
+    nav ul {
+        display: flex; /* Show nav items horizontally */
+        position: static; /* Override absolute positioning */
+        background-color: transparent; /* No dropdown background */
+        width: auto;
+    }
+    nav ul li a {
+        border-bottom: none;
+        padding: 0.5rem 1rem;
+    }
+    nav ul li a:hover, nav ul li a.active {
+        background-color: var(--accent1-color);
+        color: var(--primary-color);
+        border-radius: 4px;
+    }
+
+
+    /* Main Content - Directory */
+    #members-container.grid-view {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+        gap: 1.5rem;
+    }
+    #members-container.grid-view .member-card {
+        margin-bottom: 0; /* Grid gap handles spacing */
+    }
+    /* List view remains single column, but styling can be adjusted if needed */
+
+
+    /* Footer */
+    footer {
+        padding: 2rem;
+    }
+    .footer-content {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .contact-info, .developer-info {
+        flex: 1;
+        padding: 0 1rem;
+    }
+    .social-links {
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto; /* Center content on very wide screens */
+    }
+    #members-container.grid-view {
+         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+}

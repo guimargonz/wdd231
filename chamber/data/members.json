@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Tech Solutions Inc.",
+    "address": "101 Innovation Drive, Techville, ST 12345",
+    "phone": "555-0101",
+    "websiteURL": "https://www.techsolutions.example.com",
+    "imageFileName": "tech_solutions_logo.webp",
+    "imagePath": "images/member_logos/",
+    "membershipLevel": 3,
+    "tagline": "Innovative software for a brighter future."
+  },
+  {
+    "name": "Green Leaf Cafe",
+    "address": "202 Organic Way, Farmtown, ST 67890",
+    "phone": "555-0202",
+    "websiteURL": "https://www.greenleafcafe.example.com",
+    "imageFileName": "green_leaf_logo.webp",
+    "imagePath": "images/member_logos/",
+    "membershipLevel": 2,
+    "tagline": "Fresh, local, and delicious."
+  },
+  {
+    "name": "Builder Brothers Co.",
+    "address": "303 Construction Ave, Buildburg, ST 10112",
+    "phone": "555-0303",
+    "websiteURL": "https://www.builderbros.example.com",
+    "imageFileName": "builder_bros_logo.webp",
+    "imagePath": "images/member_logos/",
+    "membershipLevel": 1,
+    "tagline": "Building your dreams, one brick at a time."
+  },
+  {
+    "name": "Artisan Bakery",
+    "address": "404 Flour St, Sweetville, ST 13141",
+    "phone": "555-0404",
+    "websiteURL": "https://www.artisanbakery.example.com",
+    "imageFileName": "artisan_bakery_logo.webp",
+    "imagePath": "images/member_logos/",
+    "membershipLevel": 3,
+    "tagline": "Handcrafted breads and pastries."
+  },
+  {
+    "name": "Quick Print Shop",
+    "address": "505 Inkwell Rd, Paperton, ST 15161",
+    "phone": "555-0505",
+    "websiteURL": "https://www.quickprint.example.com",
+    "imageFileName": "quick_print_logo.webp",
+    "imagePath": "images/member_logos/",
+    "membershipLevel": 1,
+    "tagline": "Your partner for all printing needs."
+  },
+  {
+    "name": "Wellness Yoga Studio",
+    "address": "606 Zen Blvd, Harmony City, ST 17181",
+    "phone": "555-0606",
+    "websiteURL": "https://www.wellnessyoga.example.com",
+    "imageFileName": "wellness_yoga_logo.webp",
+    "imagePath": "images/member_logos/",
+    "membershipLevel": 2,
+    "tagline": "Find your inner peace."
+  },
+  {
+    "name": "Reliable Motors",
+    "address": "707 Highway Dr, Autoville, ST 19202",
+    "phone": "555-0707",
+    "websiteURL": "https://www.reliablemotors.example.com",
+    "imageFileName": "reliable_motors_logo.webp",
+    "imagePath": "images/member_logos/",
+    "membershipLevel": 3,
+    "tagline": "Quality cars, trusted service."
+  }
+]
