@@ -17,6 +17,11 @@
     --silver-member-border: #B0BEC5;
     --bronze-member-bg: #E8F5E9;
     --bronze-member-border: #A5D6A7;
+
+    /* Darker shades for text on member level badges */
+    --bronze-member-text: #38761D; /* Corrected: Static darker green */
+    --silver-member-text: #546E7A; /* Corrected: Static darker blue-grey */
+    --gold-member-text: #B8860B;   /* Corrected: Static darker gold */
 }
 
 body {
@@ -223,14 +228,14 @@ main {
 }
 .member-level-1 .membership-level {
     background-color: var(--bronze-member-bg);
-    color: darken(var(--bronze-member-border), 20%);
+    color: var(--bronze-member-text); /* Corrected */
 }
 .member-level-2 { /* Silver */
     border-left: 5px solid var(--silver-member-border);
 }
 .member-level-2 .membership-level {
     background-color: var(--silver-member-bg);
-    color: darken(var(--silver-member-border), 20%);
+    color: var(--silver-member-text); /* Corrected */
 }
 .member-level-3 { /* Gold */
     border-left: 5px solid var(--gold-member-border);
@@ -238,7 +243,7 @@ main {
 }
 .member-level-3 .membership-level {
     background-color: var(--gold-member-bg);
-    color: darken(var(--gold-member-border), 20%);
+    color: var(--gold-member-text); /* Corrected */
 }
 
 
@@ -275,13 +280,6 @@ main {
     white-space: nowrap;
     align-self: flex-start; /* Align to top in case text wraps */
 }
-
-
-/* Grid View (default, #members-container.grid-view) - handled by media query mostly */
-#members-container.grid-view .member-card {
-    /* Styles already defined for member-card are good for mobile single column */
-}
-
 
 /* Footer */
 footer {
