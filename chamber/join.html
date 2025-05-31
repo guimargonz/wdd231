@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Join the Chamber of Commerce of the South</title>
+    <meta name="description" content="Become a member of the Chamber of Commerce of the South. Fill out our application form to join today.">
+    <meta name="author" content="Guilherme Martinez Gonzaga">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="South Chamber Member Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://guimargonz.github.io/wdd231/chamber/images/social-share.png">
+    <meta property="og:url" content="https://guimargonz.github.io/wdd231/chamber/directory.html">
+    <meta property="og:description" content="Explore the diverse members of the Chamber of Commerce of the South.">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript (defer) -->
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/members.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="South Chamber Logo" id="chamber-logo">
+            <div class="chamber-name">
+                <h2>South</h2>
+                <p>Chamber of Commerce</p>
+            </div>
+        </div>
+        <nav>
+            <button id="menu-button" aria-label="Toggle navigation menu">☰</button>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html" class="active">Join</a></li>
+                <li><a href="#">Contact</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main class="join-main">
+        <h1>Join Our Chamber</h1>
+        <p>We're excited for you to become a part of our vibrant business community! Please fill out the form below.</p>
+    
+        <div class="join-content-wrapper">
+            <form method="get" action="thankyou.html" id="joinForm">
+                <fieldset>
+                    <legend>Applicant Information</legend>
+                    <label>First Name* <input type="text" name="firstName" id="firstName" title="Applicant's First Name" required autocomplete="given-name"></label>
+                    <label>Last Name* <input type="text" name="lastName" id="lastName" title="Applicant's Last Name" required autocomplete="family-name"></label>
+                    <label>Title/Position <input type="text" name="titlePosition" id="titlePosition" title="Applicant's Title or Position (e.g., CEO, Manager, Owner). Minimum 7 alpha characters, spaces, or hyphens." pattern="[A-Za-z\s-]{7,}" autocomplete="organization-title"></label>
+                    <label>Email* <input type="email" name="email" id="email" title="Applicant's Email Address" required autocomplete="email" placeholder="example@domain.com"></label>
+                    <label>Mobile Phone Number* <input type="tel" name="mobile" id="mobile" title="Applicant's Mobile Phone Number" required autocomplete="tel"></label>
+                </fieldset>
+    
+                <fieldset>
+                    <legend>Business/Organization Information</legend>
+                    <label>Business/Organization Name* <input type="text" name="organization" id="organization" title="Business or Organization Name" required autocomplete="organization"></label>
+                    
+                    <div class="membership-level-selection">
+                        <p>Select Membership Level*:</p>
+                        <label><input type="radio" name="membershipLevel" value="np" required> Non-Profit Membership (No Fee)</label>
+                        <label><input type="radio" name="membershipLevel" value="bronze"> Bronze Membership</label>
+                        <label><input type="radio" name="membershipLevel" value="silver"> Silver Membership</label>
+                        <label><input type="radio" name="membershipLevel" value="gold"> Gold Membership</label>
+                    </div>
+    
+                    <label>Business/Organization Description
+                        <textarea name="orgDescription" id="orgDescription" rows="5" title="Briefly describe your business or organization."></textarea>
+                    </label>
+                </fieldset>
+    
+                <input type="hidden" name="formLoadTimestamp" id="formLoadTimestamp">
+                <input type="submit" value="Join the Chamber" class="submitBtn">
+            </form>
+    
+            <aside class="membership-info-cards">
+                <h2>Membership Levels & Benefits</h2>
+                <div class="membership-card" id="np-card">
+                    <h3>Non-Profit Membership</h3>
+                    <p>For registered non-profit organizations.</p>
+                    <button type="button" class="benefits-link" data-modal-target="npModal">View Benefits</button>
+                </div>
+                <div class="membership-card" id="bronze-card">
+                    <h3>Bronze Membership</h3>
+                    <p>Essential benefits for growing businesses.</p>
+                    <button type="button" class="benefits-link" data-modal-target="bronzeModal">View Benefits</button>
+                </div>
+                <div class="membership-card" id="silver-card">
+                    <h3>Silver Membership</h3>
+                    <p>Enhanced visibility and networking.</p>
+                    <button type="button" class="benefits-link" data-modal-target="silverModal">View Benefits</button>
+                </div>
+                <div class="membership-card" id="gold-card">
+                    <h3>Gold Membership</h3>
+                    <p>Premium benefits and exclusive access.</p>
+                    <button type="button" class="benefits-link" data-modal-target="goldModal">View Benefits</button>
+                </div>
+            </aside>
+        </div>
+    
+        <!-- Modals for Membership Benefits -->
+        <dialog id="npModal" class="membership-modal">
+            <div class="modal-header">
+                <h2>Non-Profit Membership Benefits</h2>
+                <button class="close-modal-btn" aria-label="Close Non-Profit Benefits Modal">×</button>
+            </div>
+            <div class="modal-content">
+                <ul>
+                    <li>Listing in online member directory.</li>
+                    <li>Networking event access (member rates where applicable).</li>
+                    <li>Community advocacy.</li>
+                    <li>Cost: No Fee (verification required).</li>
+                </ul>
+            </div>
+        </dialog>
+    
+        <dialog id="bronzeModal" class="membership-modal">
+            <div class="modal-header">
+                <h2>Bronze Membership Benefits</h2>
+                <button class="close-modal-btn" aria-label="Close Bronze Benefits Modal">×</button>
+            </div>
+            <div class="modal-content">
+                <ul>
+                    <li>All NP benefits.</li>
+                    <li>Access to member-only workshops.</li>
+                    <li>Discounted rates for paid events.</li>
+                    <li>Cost: $100/year.</li>
+                </ul>
+            </div>
+        </dialog>
+    
+        <dialog id="silverModal" class="membership-modal">
+             <div class="modal-header">
+                <h2>Silver Membership Benefits</h2>
+                <button class="close-modal-btn" aria-label="Close Silver Benefits Modal">×</button>
+            </div>
+            <div class="modal-content">
+                <ul>
+                    <li>All Bronze benefits.</li>
+                    <li>Company spotlight opportunity (1 per year, basic listing).</li>
+                    <li>Enhanced directory listing.</li>
+                    <li>Business referrals.</li>
+                    <li>Cost: $250/year.</li>
+                </ul>
+            </div>
+        </dialog>
+    
+        <dialog id="goldModal" class="membership-modal">
+            <div class="modal-header">
+                <h2>Gold Membership Benefits</h2>
+                <button class="close-modal-btn" aria-label="Close Gold Benefits Modal">×</button>
+            </div>
+            <div class="modal-content">
+                <ul>
+                    <li>All Silver benefits.</li>
+                    <li>Premier company spotlight on homepage (random rotation, more frequent).</li>
+                    <li>Free admission to select signature events (1 ticket).</li>
+                    <li>Logo on Chamber website.</li>
+                    <li>Priority consideration for speaking opportunities.</li>
+                    <li>Cost: $500/year.</li>
+                </ul>
+            </div>
+        </dialog>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p>Chamber of Commerce of the South</p>
+                <p>123 Main Street, Passo Fundo, RS, Brazil</p>
+                <p>Email: info@southchamber.org</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="developer-info">
+                <p>©<span id="currentyear"></span> Guilherme Martinez</p>
+                <p>WDD 231 - Web Frontend Development I</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><img src="images/icons8-facebook.svg" alt="Facebook"></a>
+            <a href="#" aria-label="LinkedIn"><img src="images/icons8-linkedin.svg" alt="LinkedIn"></a>
+        </div>
+    </footer>
+</body>
+</html>

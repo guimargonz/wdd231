@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Home Page - Chamber of Commerce of the South</title>
-    <meta name="description" content="Welcome to the official website of the Chamber of Commerce of the South. Discover events, local businesses, and join our community.">
+    <title>Thank You for Joining - Chamber of Commerce of the South</title>
+    <meta name="description" content="Confirmation page for the Chamber of Commerce of the South membership application. Thank you for joining!">
     <meta name="author" content="Guilherme Martinez Gonzaga">
 
     <!-- Favicon -->
@@ -33,7 +33,7 @@
     <!-- JavaScript (defer) -->
     <script src="scripts/main.js" defer></script>
     <script src="scripts/members.js" defer></script>
-    <script src="scripts/home.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
 </head>
 
 <body>
@@ -57,58 +57,36 @@
         </nav>
     </header>
 
-    <main class="home-main">
-        <section id="hero">
-            <picture>
-                <source media="(max-width: 500px)" srcset="images/hero-small.webp">
-                <source media="(max-width: 900px)" srcset="images/hero-medium.webp">
-                <img src="images/hero-large.webp" alt="Scenic view of Passo fundo">
-            </picture>
-            <div class="hero-overlay">
-                <h1>Welcome to The South!</h1>
-                <p>Your Partner in Business & Community Growth.</p>
-                <a href="join.html" class="cta-button">Join the Chamber Today!</a>
-            </div>
-        </section>
+    <main class="thankyou-main">
+        <h1>Thank You for Your Application!</h1>
+        <p>We have received your membership application for the [Your City/Region] Chamber of Commerce. We will review it shortly and be in touch.</p>
+        
+        <section class="application-summary">
+            <h2>Your Submitted Information:</h2>
+            <dl>
+                <dt>First Name:</dt>
+                <dd id="submittedFirstName"></dd>
     
-        <section id="current-events">
-            <h2>Upcoming Chamber Events</h2>
-            <div class="events-container">
-                <article class="event-card">
-                    <h3>Annual Business Expo</h3>
-                    <p class="event-date">Date: September 15, 2024</p>
-                    <p>Connect with local businesses and innovators. Keynote speakers, workshops, and networking opportunities.</p>
-                    <a href="#" class="event-link">Learn More & Register</a>
-                </article>
-                <article class="event-card">
-                    <h3>Community Cleanup Day</h3>
-                    <p class="event-date">Date: October 5, 2024</p>
-                    <p>Join us in making the South more beautiful. Volunteers needed!</p>
-                    <a href="#" class="event-link">Sign Up to Volunteer</a>
-                </article>
-                <!-- Add more events or a link to a full events page if applicable -->
-            </div>
-        </section>
+                <dt>Last Name:</dt>
+                <dd id="submittedLastName"></dd>
     
-        <section id="weather-info">
-            <h2>Local Weather in Passo Fundo, RS</h2>
-            <div class="weather-current">
-                <img id="weather-icon-current" src="#" alt="Current weather icon">
-                <p><span id="current-temp">--</span>°F - <span id="weather-desc">Loading...</span></p>
-            </div>
-            <h3>3-Day Forecast</h3>
-            <div class="forecast-container">
-                <!-- Forecast cards will be dynamically inserted by JavaScript -->
-            </div>
-        </section>
+                <dt>Email:</dt>
+                <dd id="submittedEmail"></dd>
     
-        <section id="company-spotlights">
-            <h2>Member Spotlights</h2>
-            <div class="spotlights-container">
-                <!-- Spotlight cards will be dynamically inserted by JavaScript -->
-            </div>
-            <p class="spotlight-message">These valued Gold & Silver members help our community thrive!</p>
+                <dt>Mobile Phone:</dt>
+                <dd id="submittedMobile"></dd>
+    
+                <dt>Business/Organization:</dt>
+                <dd id="submittedOrganization"></dd>
+                
+                <dt>Membership Level:</dt>
+                <dd id="submittedMembershipLevel"></dd>
+    
+                <dt>Application Submitted On:</dt>
+                <dd id="submittedTimestamp"></dd>
+            </dl>
         </section>
+        <p>Return to our <a href="index.html">Homepage</a>.</p>
     </main>
 
     <footer>

@@ -500,3 +500,211 @@ footer {
     font-style: italic;
     color: var(--text-dark);
 }
+
+/* Join Page Specific */
+.join-main h1, .thankyou-main h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.join-main > p, .thankyou-main > p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#joinForm fieldset {
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 1rem;
+}
+#joinForm legend {
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 0 0.5rem;
+}
+#joinForm label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 0.95em;
+}
+#joinForm input[type="text"],
+#joinForm input[type="email"],
+#joinForm input[type="tel"],
+#joinForm textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important */
+    font-family: var(--font-body);
+}
+#joinForm input:focus, #joinForm textarea:focus {
+    border-color: var(--accent1-color);
+    outline: 2px solid var(--accent1-color);
+    outline-offset: -1px;
+}
+.membership-level-selection p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.membership-level-selection label {
+    display: block; /* Or inline-block with margin */
+    margin-bottom: 0.3rem;
+    font-weight: normal;
+}
+.membership-level-selection input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.submitBtn {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--accent1-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.submitBtn:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+.membership-info-cards {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--background-medium);
+    border-radius: 8px;
+}
+.membership-info-cards h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.membership-card {
+    background-color: var(--background-light);
+    border: 1px solid var(--primary-color);
+    border-left: 5px solid var(--accent2-color); /* Example accent */
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    /* Animation properties */
+    opacity: 0; /* Start invisible for fade-in */
+    transform: translateY(20px); /* Start slightly lower for slide-up */
+    animation: cardFadeInUp 0.6s ease-out forwards;
+}
+/* Staggered animation delays */
+.membership-card:nth-child(2) { animation-delay: 0.1s; } /* NP card is actually first in div */
+.membership-card:nth-child(3) { animation-delay: 0.2s; } /* Bronze */
+.membership-card:nth-child(4) { animation-delay: 0.3s; } /* Silver */
+.membership-card:nth-child(5) { animation-delay: 0.4s; } /* Gold */
+
+
+@keyframes cardFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.membership-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+.membership-card p {
+    font-size: 0.9em;
+    margin-bottom: 0.75rem;
+}
+.benefits-link {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* If it's an <a> tag */
+}
+.benefits-link:hover {
+    background-color: var(--accent1-color);
+    color: var(--primary-color);
+}
+
+.membership-modal {
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 0; /* Header and content will have padding */
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.membership-modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+}
+.modal-header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 6px; /* Match dialog radius */
+    border-top-right-radius: 6px;
+}
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.3em;
+    color: var(--text-light);
+}
+.close-modal-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+}
+.modal-content {
+    padding: 1rem 1.5rem;
+}
+.modal-content ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+.modal-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+.application-summary {
+    background-color: var(--background-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem auto;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.application-summary h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.application-summary dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+}
+.application-summary dt {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.application-summary dd {
+    margin-left: 0;
+}
