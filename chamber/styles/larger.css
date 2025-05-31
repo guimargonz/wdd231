@@ -76,3 +76,57 @@
          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
 }
+
+@media (min-width: 768px) {
+    .hero-overlay h1 {
+        font-size: 2.5em;
+    }
+    .hero-overlay p {
+        font-size: 1.2em;
+    }
+    .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1.1em;
+    }
+
+    /* Layout sections in grid if desired for home page */
+    .home-main {
+        /* Example: display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; */
+        /* Or keep single column and just widen content */
+    }
+
+    .events-container {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-around;
+    }
+    .event-card {
+        flex-basis: 45%; /* Example: Two columns */
+        margin-bottom: 0;
+    }
+
+    .forecast-container {
+        flex-direction: row; /* Horizontal on larger screens */
+        justify-content: space-around;
+    }
+    .forecast-card {
+        flex-basis: 30%; /* Three columns */
+    }
+
+    .spotlights-container {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping if more than fit */
+        gap: 1rem;
+        justify-content: center; /* Center the cards */
+    }
+    .spotlight-card {
+        flex-basis: calc(50% - 1rem); /* Two columns, accounting for gap */
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .spotlight-card {
+        flex-basis: calc(33.333% - 1rem); /* Three columns */
+    }
+}

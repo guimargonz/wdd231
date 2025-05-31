@@ -305,3 +305,198 @@ footer {
     margin: 0 0.5rem;
     filter: invert(90%) sepia(10%) saturate(100%) hue-rotate(180deg) brightness(100%) contrast(90%); /* Makes them light */
 }
+
+#hero {
+    position: relative; /* For positioning the overlay */
+    overflow: hidden; /* If images are slightly larger than container */
+}
+
+#hero picture img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    min-height: 250px; /* Ensure a minimum height */
+    object-fit: cover; /* Crop image to fill container */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for text */
+    color: var(--text-light);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 90%;
+}
+
+.hero-overlay h1 {
+    color: var(--text-light);
+    font-size: 1.8em;
+    margin-bottom: 0.5rem;
+}
+.hero-overlay p {
+    font-size: 1em;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent1-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+#current-events {
+    padding: 1rem;
+    background-color: var(--background-light); /* Or a slightly different shade */
+    text-align: center;
+}
+#current-events h2 {
+    margin-bottom: 1rem;
+}
+.events-container {
+    /* Mobile: cards stack by default (block elements) */
+}
+.event-card {
+    background-color: var(--background-medium); /* Or --background-light if #current-events is different */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+.event-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+.event-date {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #666;
+}
+.event-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+#weather-info {
+    padding: 1rem;
+    background-color: var(--accent2-color); /* Example: use an accent color */
+    color: var(--text-light);
+    text-align: center;
+}
+#weather-info h2, #weather-info h3 {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+.weather-current {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    margin-bottom: 1rem;
+}
+.weather-current img {
+    width: 50px; /* Adjust as needed */
+    height: 50px;
+    margin-right: 0.5rem;
+}
+.forecast-container {
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    gap: 0.5rem;
+}
+.forecast-card {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent cards */
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+}
+.forecast-card h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1em;
+    color: var(--text-light);
+}
+.forecast-card img {
+    width: 40px;
+    height: 40px;
+}
+.forecast-card p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+#company-spotlights {
+    padding: 1rem;
+    text-align: center;
+}
+.spotlights-container {
+    /* Mobile: cards stack by default */
+}
+.spotlight-card { /* Can inherit from .member-card if you have common base */
+    background-color: var(--background-light);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.spotlight-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0.5rem auto; /* Center the image */
+    border: 1px solid #eee;
+    padding: 3px;
+}
+.spotlight-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+.spotlight-card .spotlight-tagline {
+    font-style: italic;
+    color: #555;
+    min-height: 2.5em; /* Give some space for tagline */
+}
+.spotlight-card hr {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 0.75rem 0;
+}
+.spotlight-card p {
+    font-size: 0.9em;
+    margin-bottom: 0.25rem;
+}
+.spotlight-card .spotlight-membership {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    display: inline-block;
+}
+ /* Member level specific styling for spotlights - can reuse from directory or define new ones */
+.spotlight-card.member-level-2 .spotlight-membership {
+    background-color: var(--silver-member-bg); color: var(--silver-member-text);
+}
+.spotlight-card.member-level-3 .spotlight-membership {
+    background-color: var(--gold-member-bg); color: var(--gold-member-text);
+}
+.spotlight-message {
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--text-dark);
+}
