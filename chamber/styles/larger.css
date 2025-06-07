@@ -152,3 +152,24 @@
         padding: 0.8rem 2rem;
     }
 }
+
+@media (min-width: 1025px) {
+    .discover-main {
+        /* Large screen: Sidebar left, Title and Gallery right (can refine columns) */
+        /* Or a 3-column layout if page structure allows, e.g., title full width */
+         grid-template-columns: 300px 1fr; /* Fixed sidebar, flexible gallery */
+         /* Or refine grid-template-areas if title is above gallery */
+         /* grid-template-areas:
+            "title   title"
+            "sidebar gallery"; */
+         /* Keep "sidebar title" "sidebar gallery" if title isn't full width */
+    }
+
+    .gallery-grid {
+        /* Large screen: Three or Four columns for cards */
+        grid-template-columns: repeat(3, 1fr); /* Example: Three columns */
+        /* Consider repeat(auto-fit, minmax(280px, 1fr)) for more flexibility */
+    }
+
+    /* Image hover effect (already defined in medium.css, will apply here too) */
+}

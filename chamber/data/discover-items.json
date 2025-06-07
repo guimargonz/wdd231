@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Historic Downtown Square",
+        "address": "100 Main Street, Passo Fundo, RS",
+        "description": "The heart of our city, featuring beautifully preserved 19th-century architecture, unique boutiques, art galleries, and cozy cafes. A perfect spot for a leisurely stroll and local shopping.",
+        "image": "downtown_square.webp"
+    },
+    {
+        "name": "City Central Park",
+        "address": "500 Park Avenue, Passo Fundo, RS",
+        "description": "A sprawling green oasis with walking trails, playgrounds, picnic areas, and a serene lake. Hosts various community events and concerts throughout the year.",
+        "image": "central_park.webp"
+    },
+    {
+        "name": "Passo Fundo Museum of Art & History",
+        "address": "25 Museum Drive, Passo Fundo, RS",
+        "description": "Explore local history and diverse art collections. Features rotating exhibits from regional artists and engaging educational programs for all ages.",
+        "image": "art_history_museum.webp"
+    },
+    {
+        "name": "Riverside Nature Trail",
+        "address": "Trailhead at 1 River Rd, Passo Fundo, RS",
+        "description": "A scenic trail perfect for hiking, biking, and birdwatching along the Passo Fundo River. Offers stunning views and a peaceful escape into nature.",
+        "image": "nature_trail.webp"
+    },
+    {
+        "name": "The Grand Theatre",
+        "address": "75 Entertainment Way, Passo Fundo, RS",
+        "description": "A beautifully restored historic theatre presenting a variety of live performances, including plays, musicals, concerts, and film screenings.",
+        "image": "grand_theatre.webp"
+    },
+    {
+        "name": "UPF Campus",
+        "address": "1 College Circle, Passo Fundo, RS",
+        "description": "A vibrant academic hub contributing to the local economy and culture. Often open for public lectures, sporting events, and campus tours.",
+        "image": "university_campus.webp"
+    },
+    {
+        "name": "Farmer's Market Pavilion",
+        "address": "300 Market St, Passo Fundo, RS",
+        "description": "Open seasonally, offering fresh local produce, artisanal goods, and a lively community atmosphere. Support local farmers and craftspeople.",
+        "image": "farmers_market.webp"
+    },
+    {
+        "name": "Old Mill Heritage Site",
+        "address": "99 Old Mill Rd, Passo Fundo, RS",
+        "description": "Discover the industrial past of our region at this preserved historic mill. Offers guided tours and insights into early manufacturing.",
+        "image": "old_mill.webp"
+    }
+]

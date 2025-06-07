@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discover Page - Chamber of Commerce of the South</title>
+    <meta name="description" content="Discover events, local businesses, and join our community.">
+    <meta name="author" content="Guilherme Martinez Gonzaga">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="South Chamber Member Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://guimargonz.github.io/wdd231/chamber/images/social-share.png">
+    <meta property="og:url" content="https://guimargonz.github.io/wdd231/chamber/directory.html">
+    <meta property="og:description" content="Explore the diverse members of the Chamber of Commerce of the South.">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript (defer) -->
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/members.js" defer></script>
+    <script src="scripts/home.js" defer></script>
+    <script src="scripts/discover.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="South Chamber Logo" id="chamber-logo">
+            <div class="chamber-name">
+                <h2>South</h2>
+                <p>Chamber of Commerce</p>
+            </div>
+        </div>
+        <nav>
+            <button id="menu-button" aria-label="Toggle navigation menu">☰</button>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="#">Contact</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main class="discover-main">
+        <h1 class="discover-title">Discover Passo Fundo</h1>
+        
+        <aside class="discover-sidebar">
+            <h2>Welcome!</h2>
+            <div id="visitor-message-area">
+                <!-- Message will be populated by JavaScript -->
+            </div>
+
+            <div class="sidebar-demographics">
+                <h3>Quick Facts</h3>
+                <ul>
+                    <li><strong>Population:</strong> 200000</li>
+                    <li><strong>Median Income:</strong> R$ 45000</li>
+                    <li><strong>Key Industries:</strong> Agriculture</li>
+                </ul>
+            </div>
+        </aside>
+    
+        <section class="discover-gallery">
+            <h2>Points of Interest</h2>
+            <div class="gallery-grid">
+                <!-- 8 Item cards will be dynamically inserted here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p>Chamber of Commerce of the South</p>
+                <p>123 Main Street, Passo Fundo, RS, Brazil</p>
+                <p>Email: info@southchamber.org</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="developer-info">
+                <p>©<span id="currentyear"></span> Guilherme Martinez</p>
+                <p>WDD 231 - Web Frontend Development I</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><img src="images/icons8-facebook.svg" alt="Facebook"></a>
+            <a href="#" aria-label="LinkedIn"><img src="images/icons8-linkedin.svg" alt="LinkedIn"></a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+/* chamber/styles/medium.css */
+@media (min-width: 641px) {
+    .discover-main {
+        /* Medium screen: Sidebar left, Title and Gallery right */
+        grid-template-columns: 1fr 2.5fr; /* Adjust ratio as needed */
+        grid-template-areas:
+            "sidebar title"
+            "sidebar gallery";
+        gap: 1.5rem;
+    }
+
+    .discover-title {
+        text-align: left; /* Or center if preferred */
+        margin-bottom: 1rem; /* Add margin if it's above gallery */
+    }
+    
+    .discover-sidebar {
+        /* Sidebar specific adjustments if needed */
+    }
+
+    .gallery-grid {
+        /* Medium screen: Two columns for cards */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Image hover effect for medium screens and up */
+    .item-card figure img {
+        transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    }
+    .item-card figure:hover img {
+        transform: scale(1.05); /* Example: slight zoom */
+        filter: brightness(0.9) contrast(1.1); /* Example: subtle filter change */
+        /* Add other effects: box-shadow, opacity, etc. */
+        /* box-shadow: 0 5px 15px rgba(0,0,0,0.2); */
+    }
+}
