@@ -1,0 +1,174 @@
+/* project-site-plan.css */
+:root {
+    --primary-color: #2E4628;      /* Deep Forest Green */
+    --secondary-color: #6B4F40;    /* Earthy Brown */
+    --accent-color: #D4A017;       /* Golden Ochre */
+    --background-light: #F5F5DC;   /* Light Beige */
+    --text-dark: #333333;
+    --text-on-dark-bg: #F0F0F0; /* For text on primary/secondary backgrounds */
+
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-on-dark-bg);
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    margin: 0;
+    font-size: 2em;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: #fff; /* White background for content sections */
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--secondary-color);
+}
+
+h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p, ul, li {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+ul {
+    padding-left: 20px;
+}
+
+strong {
+    color: var(--primary-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+    filter: brightness(1.1);
+}
+
+/* Color Schema Section */
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.color-swatch {
+    flex: 1 1 150px; /* Grow, shrink, base width */
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.color-swatch p {
+    margin: 0;
+    font-size: 0.9em;
+}
+.primary-bg { background-color: var(--primary-color); color: var(--text-on-dark-bg); }
+.secondary-bg { background-color: var(--secondary-color); color: var(--text-on-dark-bg); }
+.accent-bg { background-color: var(--accent-color); color: var(--text-dark); } /* Ochre might need dark text */
+.light-bg { background-color: var(--background-light); color: var(--text-dark); border: 1px solid #ddd; }
+.dark-text-sample { background-color: #fff; color: var(--text-dark); border: 1px solid #ddd; } /* For showing dark text on light bg */
+
+
+/* Typography Section */
+.sample-merriweather {
+    font-family: var(--font-heading);
+    font-size: 1.5em; /* Example size */
+    color: var(--primary-color);
+}
+.sample-lato {
+    font-family: var(--font-body);
+    font-size: 1.1em; /* Example size */
+}
+
+/* Wireframes Section */
+.wireframe-container {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: var(--background-light);
+}
+.wireframe-container img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    display: block;
+    margin: 0 auto 1rem auto;
+    background-color: #e9e9e9; /* Placeholder bg for image area */
+}
+.wireframe-description {
+    font-size: 0.9em;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent-color);
+}
+.wireframe-description ul {
+    font-size: 1em; /* Reset from 0.9em of parent */
+    margin-top: 0.5rem;
+}
+
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-on-dark-bg);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9em;
+}
+
+/* Basic responsiveness for main content */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.6em;
+    }
+    main {
+        margin: 1rem auto;
+    }
+    section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+}
