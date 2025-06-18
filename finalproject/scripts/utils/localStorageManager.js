@@ -31,3 +31,23 @@ export function getThemePreference() {
   }
   return theme || "light"; // Default to light
 }
+
+const ALL_PATIENTS_LS_KEY = 'therapyTrackPro_allPatientsData';
+
+export function getAllPatientsFromLS() {
+    try {
+        const data = localStorage.getItem(ALL_PATIENTS_LS_KEY);
+        return data ? JSON.parse(data) : null;
+    } catch (error) {
+        console.error("Error reading all patients from localStorage:", error);
+        return null;
+    }
+}
+
+export function setAllPatientsInLS(patientsArray) {
+    try {
+        localStorage.setItem(ALL_PATIENTS_LS_KEY, JSON.stringify(patientsArray));
+    } catch (error) {
+        console.error("Error saving all patients to localStorage:", error);
+    }
+}

@@ -1,4 +1,7 @@
-import { getPatientById } from "../services/patientService.js";
+import {
+  getPatientById,
+  updatePatientInLS,
+} from "../services/patientService.js";
 import { displayGoals, displaySessions } from "../utils/domUtils.js";
 import {
   getLastViewedPatientId,
@@ -22,6 +25,17 @@ const modalTitle = document.getElementById("modal-title");
 const modalContent = document.getElementById("modal-content");
 // const closeModalBtn = document.getElementById('close-modal-btn'); // Handled in main.js
 
+// Add Goal Modal elements
+const addGoalModal = document.getElementById("add-goal-modal");
+const closeAddGoalModalBtn = document.getElementById(
+  "close-add-goal-modal-btn"
+);
+const addGoalForm = document.getElementById("add-goal-form");
+const addGoalBtn = document.getElementById("add-goal-btn");
+const patientIdForGoalField = document.getElementById("patientIdForGoal");
+
+let currentPatientData = null; // To store the currently displayed patient data for modification
+
 async function initializePatientDetail() {
   const params = new URLSearchParams(window.location.search);
   let patientId = params.get("id");
@@ -44,6 +58,9 @@ async function initializePatientDetail() {
   const patient = await getPatientById(patientId);
 
   if (patient) {
+    // Store fetched patient data globally for this page (deep copy to avoid modifying original)
+    currentPatientData = JSON.parse(JSON.stringify(patient));
+
     document.title = `${patient.firstName} ${patient.lastName} - Details - TherapyTrack Pro`; // Dynamic Title
     if (patientNameHeading)
       patientNameHeading.textContent = `${patient.firstName} ${patient.lastName}`;
@@ -56,13 +73,23 @@ async function initializePatientDetail() {
     if (patientContactPhoneEl)
       patientContactPhoneEl.textContent = patient.contactPhone;
 
-    if (goalsContainer) displayGoals(patient.goals, goalsContainer, patient.id);
+    if (goalsContainer)
+      displayGoals(
+        currentPatientData.goals,
+        goalsContainer,
+        currentPatientData.id
+      );
     if (sessionsContainer)
-      displaySessions(patient.sessions, sessionsContainer, patient.id);
-    if (logNewSessionBtn) logNewSessionBtn.dataset.patientId = patient.id; // For log-session page link
+      displaySessions(
+        currentPatientData.sessions,
+        sessionsContainer,
+        currentPatientData.id
+      );
+    if (logNewSessionBtn)
+      logNewSessionBtn.dataset.patientId = currentPatientData.id; // For log-session page link
 
     // Add event listeners for modal triggers AFTER content is rendered
-    addModalEventListeners(patient);
+    addModalEventListeners(currentPatientData);
   } else {
     if (patientNameHeading)
       patientNameHeading.textContent = "Patient Not Found";
@@ -73,17 +100,17 @@ async function initializePatientDetail() {
   }
 }
 
-function addModalEventListeners(patient) {
+function addModalEventListeners(patientData) {
   document.querySelectorAll(".open-modal-btn").forEach((button) => {
     button.addEventListener("click", (event) => {
       const type = event.target.dataset.type; // 'goal' or 'session'
       const id = event.target.dataset.id;
       let item;
       if (type === "goal") {
-        item = patient.goals.find((g) => g.id === id);
+        item = patientData.goals.find((g) => g.id === id);
         if (modalTitle) modalTitle.textContent = "Goal Details";
       } else if (type === "session") {
-        item = patient.sessions.find((s) => s.id === id);
+        item = patientData.sessions.find((s) => s.id === id);
         if (modalTitle) modalTitle.textContent = "Session Details";
       }
 
@@ -129,6 +156,77 @@ function addModalEventListeners(patient) {
   });
 }
 
+// Add Goal Modal Functionality
+if (addGoalBtn && addGoalModal && patientIdForGoalField) {
+  addGoalBtn.addEventListener("click", () => {
+    if (currentPatientData) {
+      patientIdForGoalField.value = currentPatientData.id;
+      addGoalForm.reset(); // Clear form for new entry
+      addGoalModal.showModal();
+    } else {
+      alert("Patient data not loaded. Cannot add goal.");
+    }
+  });
+}
+
+if (closeAddGoalModalBtn && addGoalModal) {
+  closeAddGoalModalBtn.addEventListener("click", () => {
+    addGoalModal.close();
+  });
+}
+
+if (addGoalModal) {
+  // Close on backdrop click
+  addGoalModal.addEventListener("click", (event) => {
+    if (event.target === addGoalModal) addGoalModal.close();
+  });
+}
+
+if (addGoalForm) {
+  addGoalForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!currentPatientData) {
+      alert("No patient selected or data loaded.");
+      return;
+    }
+
+    const formData = new FormData(addGoalForm);
+    const newGoal = {
+      id: `g${Date.now()}`, // Simple unique ID
+      description: formData.get("goalDescription"),
+      status: formData.get("goalStatus"),
+      targetDate: formData.get("goalTargetDate") || null,
+      notes: formData.get("goalNotes") || null,
+    };
+
+    if (!currentPatientData.goals) {
+      currentPatientData.goals = [];
+    }
+    currentPatientData.goals.push(newGoal);
+
+    // Update patient data in LocalStorage
+    const success = await updatePatientInLS(currentPatientData);
+
+    if (success) {
+      // Re-display goals for the current patient from the updated currentPatientData
+      if (goalsContainer)
+        displayGoals(
+          currentPatientData.goals,
+          goalsContainer,
+          currentPatientData.id
+        );
+      addGoalModal.close();
+      // Re-add modal event listeners since content was re-rendered
+      addModalEventListeners(currentPatientData);
+    } else {
+      alert("Failed to save the new goal. Please try again.");
+      // Revert the change to currentPatientData.goals if save failed
+      currentPatientData.goals.pop();
+    }
+  });
+}
+
+// Log New Session Button Functionality
 if (logNewSessionBtn) {
   logNewSessionBtn.addEventListener("click", () => {
     const patientId = logNewSessionBtn.dataset.patientId;

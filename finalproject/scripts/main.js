@@ -77,6 +77,10 @@ if (document.body.id === "dashboard-page") {
   import("./pages/thankYou.js").catch((err) =>
     console.error("Failed to load thank you script:", err)
   );
+} else if (document.body.id === 'add-patient-page') {
+    import('../pages/addPatientForm.js').catch(err => console.error("Failed to load add patient form script:", err));
+} else if (document.body.id === 'add-patient-thank-you-page') {
+    import('../pages/addPatientThankYou.js').catch(err => console.error("Failed to load add patient thank you script:", err));
 }
 
 // Initialize theme (example of another LS use)

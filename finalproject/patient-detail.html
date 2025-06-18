@@ -44,7 +44,7 @@
         </section>
 
         <section id="therapy-goals-section">
-            <h3>Therapy Goals <button id="add-goal-btn-placeholder" class="action-btn-small">+ Add Goal (Placeholder)</button></h3>
+            <h3>Therapy Goals <button id="add-goal-btn" class="action-btn-small" type="button">+ Add Goal</button></h3>
             <div id="goals-container">
                 <p class="loading-message">Loading goals...</p>
                 <!-- Goals will be dynamically inserted here -->
@@ -69,6 +69,35 @@
         <div id="modal-content" class="modal-body">
             <!-- Dynamic content here -->
         </div>
+    </dialog>
+
+    <dialog id="add-goal-modal">
+        <div class="modal-header">
+            <h3 id="add-goal-modal-title">Add New Goal</h3>
+            <button id="close-add-goal-modal-btn" class="close-modal" aria-label="Close add goal modal">×</button>
+        </div>
+        <form id="add-goal-form" class="modal-body">
+            <input type="hidden" name="patientIdForGoal" id="patientIdForGoal">
+            
+            <label for="goalDescription">Goal Description:*</label>
+            <textarea name="goalDescription" id="goalDescription" rows="3" required title="Description of the therapy goal"></textarea>
+    
+            <label for="goalStatus">Status:*</label>
+            <select name="goalStatus" id="goalStatus" required title="Current status of the goal">
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Achieved">Achieved</option>
+                <option value="On Hold">On Hold</option>
+            </select>
+    
+            <label for="goalTargetDate">Target Date:</label>
+            <input type="date" name="goalTargetDate" id="goalTargetDate" title="Target completion date for the goal">
+    
+            <label for="goalNotes">Notes:</label>
+            <textarea name="goalNotes" id="goalNotes" rows="2" title="Additional notes for the goal"></textarea>
+            
+            <button type="submit" class="submit-btn">Save Goal</button>
+        </form>
     </dialog>
 
     <footer>

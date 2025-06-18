@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Patient - TherapyTrack Pro</title>
+    <meta name="description" content="Add a new patient to your caseload in TherapyTrack Pro.">
+    <meta name="author" content="Guilherme Martinez Gonzaga">
+    <!-- Add OG tags -->
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+<body id="add-patient-page">
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.svg" alt="TherapyTrack Pro Logo" id="site-logo">
+                <h1>TherapyTrack Pro</h1>
+            </a>
+            <button id="menu-button" aria-label="Toggle Navigation Menu" aria-expanded="false">☰</button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="log-session.html">Log Session</a></li>
+                    <li><a href="#">Settings (Placeholder)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Add New Patient</h2>
+        <form id="add-patient-form" action="add-patient-thankyou.html" method="get">
+            <fieldset>
+                <legend>Patient Demographics</legend>
+                <label for="firstName">First Name:*</label>
+                <input type="text" name="firstName" id="firstName" required title="Patient's First Name" autocomplete="given-name">
+
+                <label for="lastName">Last Name:*</label>
+                <input type="text" name="lastName" id="lastName" required title="Patient's Last Name" autocomplete="family-name">
+
+                <label for="dob">Date of Birth:*</label>
+                <input type="date" name="dob" id="dob" required title="Patient's Date of Birth">
+                
+                <label for="profileImageUrl">Profile Image URL (Optional):</label>
+                <input type="url" name="profileImageUrl" id="profileImageUrl" title="URL for patient's profile picture" placeholder="e.g., images/new_patient.png">
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="contactName">Primary Contact Name:</label>
+                <input type="text" name="contactName" id="contactName" title="Name of Primary Contact" autocomplete="name">
+
+                <label for="contactPhone">Primary Contact Phone:</label>
+                <input type="tel" name="contactPhone" id="contactPhone" title="Phone Number of Primary Contact" autocomplete="tel">
+
+                <label for="contactEmail">Primary Contact Email:</label>
+                <input type="email" name="contactEmail" id="contactEmail" title="Email Address of Primary Contact" autocomplete="email">
+            </fieldset>
+
+            <fieldset>
+                <legend>Therapy Information</legend>
+                <label for="primaryConcern">Primary Concern/Reason for Therapy:</label>
+                <textarea name="primaryConcern" id="primaryConcern" rows="4" title="Describe the primary concern or reason for therapy"></textarea>
+            </fieldset>
+
+            <input type="hidden" name="formSubmitTimestamp" id="form-submit-timestamp">
+            <button type="submit" class="submit-btn">Add Patient</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© <span id="currentYear"></span> Guilherme Martinez Gonzaga - WDD 231 Final Project</p>
+        <p>
+            <a href="attributions.html">Attributions</a> |
+            <a href="YOUR_VIDEO_LINK_HERE" target="_blank" rel="noopener noreferrer">Project Video Demo</a>
+        </p>
+    </footer>
+</body>
+</html>
