@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Logged - TherapyTrack Pro</title>
+    <meta name="description" content="Confirmation of your logged therapy session.">
+    <meta name="author" content="Guilherme Martinez Gonzaga">
+    <!-- Add OG tags -->
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+<body id="thank-you-page">
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.svg" alt="TherapyTrack Pro Logo" id="site-logo">
+                <h1>TherapyTrack Pro</h1>
+            </a>
+            <button id="menu-button" aria-label="Toggle Navigation Menu" aria-expanded="false">☰</button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="log-session.html">Log Session</a></li>
+                    <!-- Add other links if desired, e.g., a 'Resources' page if that's your 3rd -->
+                    <li><a href="#">Settings (Placeholder)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Session Successfully Logged!</h2>
+        <p>Thank you for logging the therapy session. Here's a summary of the details:</p>
+        <section id="submission-summary" class="details-grid">
+            <p><strong>Patient ID:</strong> <span id="summary-patient-id"></span></p>
+            <p><strong>Session Date:</strong> <span id="summary-session-date"></span></p>
+            <p><strong>Duration:</strong> <span id="summary-session-duration"></span> minutes</p>
+            <p><strong>Type:</strong> <span id="summary-session-type"></span></p>
+            <p><strong>Submitted On:</strong> <span id="summary-timestamp"></span></p>
+        </section>
+        <p><a href="index.html" class="action-btn">Back to Dashboard</a></p>
+    </main>
+
+    <footer>
+        <p>© <span id="currentYear"></span> Guilherme Martinez Gonzaga - WDD 231 Final Project</p>
+        <p>
+            <a href="attributions.html">Attributions</a> | 
+            <a href="YOUR_VIDEO_LINK_HERE" target="_blank" rel="noopener noreferrer">Project Video Demo</a>
+        </p>
+    </footer>
+</body>
+</html>

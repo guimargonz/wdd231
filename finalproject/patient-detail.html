@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details - TherapyTrack Pro</title> <!-- Title will be updated by JS -->
+    <meta name="description" content="View detailed information, therapy goals, and session history for a patient.">
+    <meta name="author" content="Guilherme Martinez Gonzaga">
+    <!-- Add OG tags specific to a patient view if you can make them dynamic, else generic -->
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+<body id="patient-detail-page">
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.svg" alt="TherapyTrack Pro Logo" id="site-logo">
+                <h1>TherapyTrack Pro</h1>
+            </a>
+            <button id="menu-button" aria-label="Toggle Navigation Menu" aria-expanded="false">☰</button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="log-session.html">Log Session</a></li>
+                    <!-- Add other links if desired, e.g., a 'Resources' page if that's your 3rd -->
+                    <li><a href="#">Settings (Placeholder)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="patient-profile-section">
+            <div class="profile-header">
+                <img src="images/profile_placeholder_child1.png" alt="Patient Profile Picture" id="patient-profile-img" class="profile-pic">
+                <h2 id="patient-name-heading">Loading Patient...</h2>
+            </div>
+            <div id="patient-info-details" class="details-grid">
+                <p><strong>Date of Birth:</strong> <span id="patient-dob"></span></p>
+                <p><strong>Primary Concern:</strong> <span id="patient-concern"></span></p>
+                <p><strong>Contact:</strong> <span id="patient-contact-name"></span> (<span id="patient-contact-phone"></span>)</p>
+            </div>
+        </section>
+
+        <section id="therapy-goals-section">
+            <h3>Therapy Goals <button id="add-goal-btn-placeholder" class="action-btn-small">+ Add Goal (Placeholder)</button></h3>
+            <div id="goals-container">
+                <p class="loading-message">Loading goals...</p>
+                <!-- Goals will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section id="session-history-section">
+            <h3>Session History <button id="log-new-session-btn" class="action-btn-small" data-patient-id="">+ Log New Session</button></h3>
+            <div id="sessions-container">
+                <p class="loading-message">Loading sessions...</p>
+                <!-- Session logs will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+    
+    <!-- Modal Structure (Example for Goal Details) -->
+    <dialog id="details-modal">
+        <div class="modal-header">
+            <h3 id="modal-title">Details</h3>
+            <button id="close-modal-btn" class="close-modal" aria-label="Close modal">×</button>
+        </div>
+        <div id="modal-content" class="modal-body">
+            <!-- Dynamic content here -->
+        </div>
+    </dialog>
+
+    <footer>
+        <p>© <span id="currentYear"></span> Guilherme Martinez Gonzaga - WDD 231 Final Project</p>
+        <p>
+            <a href="attributions.html">Attributions</a> | 
+            <a href="YOUR_VIDEO_LINK_HERE" target="_blank" rel="noopener noreferrer">Project Video Demo</a>
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Therapy Session - TherapyTrack Pro</title>
+    <meta name="description" content="Log details for a speech therapy session.">
+    <meta name="author" content="[Your Name]">
+    <!-- Add OG tags -->
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+<body id="log-session-page">
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.svg" alt="TherapyTrack Pro Logo" id="site-logo">
+                <h1>TherapyTrack Pro</h1>
+            </a>
+            <button id="menu-button" aria-label="Toggle Navigation Menu" aria-expanded="false">☰</button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="log-session.html">Log Session</a></li>
+                    <!-- Add other links if desired, e.g., a 'Resources' page if that's your 3rd -->
+                    <li><a href="#">Settings (Placeholder)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Log New Therapy Session</h2>
+        <form id="log-session-form" action="form-thankyou.html" method="get">
+            <fieldset>
+                <legend>Session Details</legend>
+                <label for="patient-select">Patient:*</label>
+                <select name="patientId" id="patient-select" required title="Select Patient">
+                    <option value="">--Select Patient--</option>
+                    <!-- Options will be populated by JS -->
+                </select>
+
+                <label for="session-date">Session Date:*</label>
+                <input type="date" name="sessionDate" id="session-date" required title="Date of Session">
+
+                <label for="session-duration">Duration (minutes):*</label>
+                <input type="number" name="sessionDuration" id="session-duration" min="15" max="120" step="15" required title="Session Duration in Minutes">
+
+                <label for="session-type">Session Type:*</label>
+                <select name="sessionType" id="session-type" required title="Type of Session">
+                    <option value="Individual">Individual</option>
+                    <option value="Group">Group</option>
+                    <option value="Consultation">Consultation</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Session Content</legend>
+                <label for="session-activities">Key Activities:</label>
+                <textarea name="sessionActivities" id="session-activities" rows="4" title="Describe key activities performed"></textarea>
+
+                <label for="session-notes">Therapist Notes:</label>
+                <textarea name="sessionNotes" id="session-notes" rows="6" title="Therapist's observations and notes"></textarea>
+            </fieldset>
+            <input type="hidden" name="formSubmitTimestamp" id="form-submit-timestamp">
+            <button type="submit" class="submit-btn">Log Session</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© <span id="currentYear"></span> Guilherme Martinez Gonzaga - WDD 231 Final Project</p>
+        <p>
+            <a href="attributions.html">Attributions</a> | 
+            <a href="YOUR_VIDEO_LINK_HERE" target="_blank" rel="noopener noreferrer">Project Video Demo</a>
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,164 @@
+[
+  {
+    "id": "p001",
+    "firstName": "Liam",
+    "lastName": "Miller",
+    "dob": "2019-03-10",
+    "contactName": "Olivia Miller (Mother)",
+    "contactPhone": "555-0111",
+    "contactEmail": "olivia.m@example.com",
+    "profileImageUrl": "images/profile_placeholder_child1.png",
+    "primaryConcern": "Speech Sound Disorder - /l/ and /r/",
+    "goals": [
+      {
+        "id": "g001a",
+        "description": "Produce /l/ sound in initial word position with 80% accuracy in structured tasks.",
+        "status": "In Progress",
+        "targetDate": "2024-12-15",
+        "notes": "Showing good stimulability for /l/."
+      },
+      {
+        "id": "g001b",
+        "description": "Produce /r/ sound in isolation with 50% accuracy.",
+        "status": "Not Started",
+        "targetDate": "2025-02-28",
+        "notes": "Will introduce after /l/ is more consistent."
+      },
+      {
+        "id": "g001c",
+        "description": "Identify /l/ vs /w/ minimal pairs with 90% accuracy.",
+        "status": "Achieved",
+        "targetDate": "2024-09-30",
+        "notes": "Mastered auditory discrimination."
+      }
+    ],
+    "sessions": [
+      {
+        "id": "s001a",
+        "date": "2024-10-05",
+        "duration": 45,
+        "type": "Individual",
+        "activities": "Mirror work for /l/, auditory bombardment, /l/ word game.",
+        "notes": "Liam was engaged. Achieved 60% on initial /l/ words.",
+        "therapist": "Dr. E. Thorne"
+      },
+      {
+        "id": "s001b",
+        "date": "2024-10-12",
+        "duration": 45,
+        "type": "Individual",
+        "activities": "/l/ articulation drills, storybook reading with /l/ targets.",
+        "notes": "Consistency improved to 70%. Started self-correction.",
+        "therapist": "Dr. E. Thorne"
+      },
+      {
+        "id": "s001c",
+        "date": "2024-10-19",
+        "duration": 45,
+        "type": "Individual",
+        "activities": "Minimal pair sorting (/l/ vs /w/), /l/ in short phrases.",
+        "notes": "Excellent discrimination. Phrase level work is next.",
+        "therapist": "Dr. E. Thorne"
+      },
+      {
+        "id": "s001d",
+        "date": "2024-10-26",
+        "duration": 45,
+        "type": "Individual",
+        "activities": "Carrier phrases with /l/, conversational practice.",
+        "notes": "Generalizing /l/ to structured conversation.",
+        "therapist": "Dr. E. Thorne"
+      },
+      {
+        "id": "s001e",
+        "date": "2024-11-02",
+        "duration": 45,
+        "type": "Individual",
+        "activities": "Review of /l/, introduction to /r/ stimulability.",
+        "notes": "Solid on /l/. Beginning exploration of /r/.",
+        "therapist": "Dr. E. Thorne"
+      }
+    ]
+  },
+  {
+    "id": "p002",
+    "firstName": "Sophia",
+    "lastName": "Garcia",
+    "dob": "2017-08-22",
+    "contactName": "Mateo Garcia (Father)",
+    "contactPhone": "555-0112",
+    "contactEmail": "mateo.g@example.com",
+    "profileImageUrl": "images/profile_placeholder_child2.png",
+    "primaryConcern": "Expressive Language Delay - Vocabulary & Sentence Structure",
+    "goals": [
+      {
+        "id": "g002a",
+        "description": "Use 50 new vocabulary words appropriately in play-based activities.",
+        "status": "In Progress",
+        "targetDate": "2024-11-30",
+        "notes": "Actively learning new words through themed play."
+      },
+      {
+        "id": "g002b",
+        "description": "Combine 2-3 words into meaningful phrases during requests.",
+        "status": "In Progress",
+        "targetDate": "2025-01-31",
+        "notes": "Starting to use 'want + noun'."
+      },
+      {
+        "id": "g002c",
+        "description": "Answer 'wh-' questions (who, what, where) related to a story.",
+        "status": "Not Started",
+        "targetDate": "2025-04-30",
+        "notes": "Focus after basic phrase structure is established."
+      }
+    ],
+    "sessions": [
+      {
+        "id": "s002a",
+        "date": "2024-10-03",
+        "duration": 60,
+        "type": "Individual",
+        "activities": "Play-doh (colors, actions), farm animal toys (naming, sounds).",
+        "notes": "Sophia named 5 animals. Used 'more' appropriately.",
+        "therapist": "Dr. E. Thorne"
+      },
+      {
+        "id": "s002b",
+        "date": "2024-10-10",
+        "duration": 60,
+        "type": "Individual",
+        "activities": "Book reading ('Brown Bear'), bubbles (requesting 'more bubbles').",
+        "notes": "Used 2-word phrase 'want ball'. Good joint attention.",
+        "therapist": "Dr. E. Thorne"
+      },
+      {
+        "id": "s002c",
+        "date": "2024-10-17",
+        "duration": 60,
+        "type": "Individual",
+        "activities": "Toy car ramp (verbs 'go', 'stop'), picture card matching.",
+        "notes": "Labeled 10 new picture cards.",
+        "therapist": "Dr. E. Thorne"
+      },
+      {
+        "id": "s002d",
+        "date": "2024-10-24",
+        "duration": 60,
+        "type": "Individual",
+        "activities": "Pretend cooking (food names, actions), puzzle.",
+        "notes": "Combined 'eat apple'. Getting more expressive.",
+        "therapist": "Dr. E. Thorne"
+      },
+      {
+        "id": "s002e",
+        "date": "2024-10-31",
+        "duration": 60,
+        "type": "Individual",
+        "activities": "Dress-up play, song with actions.",
+        "notes": "Followed 2-step directions during play.",
+        "therapist": "Dr. E. Thorne"
+      }
+    ]
+  }
+]

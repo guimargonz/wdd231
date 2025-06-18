@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - TherapyTrack Pro</title>
+    <meta name="description" content="Manage your speech therapy patients, track progress, and log sessions with TherapyTrack Pro.">
+    <meta name="author" content="Guilherme Martinez Gonzaga">
+    <meta property="og:title" content="Patient Dashboard - TherapyTrack Pro">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.svg"> <!-- Or a specific dashboard screenshot -->
+    <meta property="og:url" content="YOUR_LIVE_URL/therapytrackpro/index.html">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+<body id="dashboard-page">
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.svg" alt="TherapyTrack Pro Logo" id="site-logo">
+                <h1>TherapyTrack Pro</h1>
+            </a>
+            <button id="menu-button" aria-label="Toggle Navigation Menu" aria-expanded="false">☰</button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="log-session.html">Log Session</a></li>
+                    <!-- Add other links if desired, e.g., a 'Resources' page if that's your 3rd -->
+                    <li><a href="#">Settings (Placeholder)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="page-title-action">
+            <h2>Patient Dashboard</h2>
+            <button id="add-patient-btn-placeholder" class="action-btn">+ Add New Patient (Placeholder)</button>
+        </section>
+        <section id="patient-list-container">
+            <!-- Patient cards will be dynamically inserted here -->
+            <p class="loading-message">Loading patients...</p>
+        </section>
+    </main>
+    <footer>
+        <p>© <span id="currentYear"></span> Guilherme Martinez Gonzaga - WDD 231 Final Project</p>
+        <p>
+            <a href="attributions.html">Attributions</a> | 
+            <a href="YOUR_VIDEO_LINK_HERE" target="_blank" rel="noopener noreferrer">Project Video Demo</a>
+        </p>
+    </footer>
+</body>
+</html>
