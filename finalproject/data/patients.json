@@ -7,7 +7,7 @@
     "contactName": "Olivia Miller (Mother)",
     "contactPhone": "555-0111",
     "contactEmail": "olivia.m@example.com",
-    "profileImageUrl": "images/profile_placeholder_child1.png",
+    "profileImageUrl": "images/liam-miller.png",
     "primaryConcern": "Speech Sound Disorder - /l/ and /r/",
     "goals": [
       {
@@ -88,7 +88,7 @@
     "contactName": "Mateo Garcia (Father)",
     "contactPhone": "555-0112",
     "contactEmail": "mateo.g@example.com",
-    "profileImageUrl": "images/profile_placeholder_child2.png",
+    "profileImageUrl": "images/sophia-garcia.png",
     "primaryConcern": "Expressive Language Delay - Vocabulary & Sentence Structure",
     "goals": [
       {

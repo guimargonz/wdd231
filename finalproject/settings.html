@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - TherapyTrack Pro</title>
+    <meta name="description" content="Adjust your application settings for TherapyTrack Pro, including theme preferences.">
+    <meta name="author" content="Guilherme Martinez Gonzaga">
+    <!-- Add OG tags -->
+    <meta property="og:title" content="Settings - TherapyTrack Pro">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.svg">
+    <meta property="og:url" content="YOUR_LIVE_URL/therapytrackpro/settings.html">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+<body id="settings-page">
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.svg" alt="TherapyTrack Pro Logo" id="site-logo">
+                <h1>TherapyTrack Pro</h1>
+            </a>
+            <button id="menu-button" aria-label="Toggle Navigation Menu" aria-expanded="false">☰</button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="log-session.html">Log Session</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Application Settings</h2>
+
+        <section id="appearance-settings">
+            <h3>Appearance</h3>
+            <div class="setting-item">
+                <label for="theme-toggle">Theme:</label>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-toggle-checkbox">
+                        <input type="checkbox" id="theme-toggle-checkbox" aria-label="Toggle dark mode"/>
+                        <span class="slider round"></span>
+                    </label>
+                    <span id="current-theme-label">Light Mode</span>
+                </div>
+            </div>
+            <p class="setting-note">Your theme preference is saved locally in your browser.</p>
+        </section>
+
+        <section id="data-management-settings" style="display: none;"> <!-- Hidden for now, placeholder -->
+            <h3>Data Management (Future Feature)</h3>
+            <div class="setting-item">
+                <button id="clear-local-data-btn" class="action-btn danger-btn">Clear All Local Data</button>
+                <p class="setting-note">This will remove all locally stored patient data and preferences. Use with caution!</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© <span id="currentYear"></span> Guilherme Martinez Gonzaga - WDD 231 Final Project</p>
+        <p>
+            <a href="attributions.html">Attributions</a> |
+            <a href="YOUR_VIDEO_LINK_HERE" target="_blank" rel="noopener noreferrer">Project Video Demo</a>
+        </p>
+    </footer>
+</body>
+</html>

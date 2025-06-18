@@ -1,5 +1,6 @@
 /* styles/main.css */
 :root {
+    /* Light Theme Variables */
     --primary-color: #8cfcf2;      /* Calming Blue */
     --secondary-color: #464949;    /* Professional Grey */
     --accent-color: #91fcbe;       /* Encouraging Green */
@@ -9,11 +10,36 @@
     --danger-color: #E74C3C;
     --border-color: #CED4DA;
 
+    /* Dark Theme Variables */
+    --primary-color-dark: #58A6FF; /* Lighter blue for dark mode */
+    --secondary-color-dark: #8B949E; /* Lighter grey */
+    --accent-color-dark: #3FB950; /* Slightly different green */
+    --background-light-dark: #0D1117; /* Very dark grey/blue - GitHub dark bg */
+    --background-medium-dark: #161B22; /* Slightly lighter than bg - GitHub dark card bg */
+    --text-dark-dark: #C9D1D9; /* Light grey text for dark mode */
+    --text-on-dark-bg-dark: #F0F0F0; /* Stays similar */
+    --border-color-dark: #30363D; /* Darker border */
+    --shadow-sm-dark: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+    --shadow-md-dark: 0 4px 6px -1px rgba(0,0,0,0.5), 0 2px 4px -1px rgba(0,0,0,0.4);
+
     --font-heading: 'Roboto', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
     --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+
+/* Dark Theme Override */
+html[data-theme="dark"] {
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+    --accent-color: var(--accent-color-dark);
+    --background-light: var(--background-light-dark);
+    --text-dark: var(--text-dark-dark);
+    --text-on-dark-bg: var(--text-on-dark-bg-dark);
+    --border-color: var(--border-color-dark);
+    --shadow-sm: var(--shadow-sm-dark);
+    --shadow-md: var(--shadow-md-dark);
 }
 
 /* --- General & Reset --- */
@@ -30,6 +56,12 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); margin-top: 0; }
+
+/* Dark theme body override */
+html[data-theme="dark"] body {
+    background-color: var(--background-light-dark);
+    color: var(--text-dark-dark);
+}
 
 /* --- Header & Navigation --- */
 header {
@@ -59,6 +91,14 @@ header h1 { font-size: 1.5rem; margin: 0; font-weight: 700; }
 nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 1rem; }
 nav a { color: var(--text-on-dark-bg); text-decoration: none; padding: 0.5rem 0.25rem; font-weight: 500; }
 nav a:hover, nav a.active { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Dark theme header overrides */
+html[data-theme="dark"] header {
+    background-color: var(--background-medium-dark);
+    color: var(--text-on-dark-bg-dark);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+html[data-theme="dark"] nav a { color: var(--text-on-dark-bg-dark); }
 
 /* --- Main Content & Common Elements --- */
 main {
@@ -94,6 +134,27 @@ section { margin-bottom: 2rem; }
 .details-grid p { margin: 0.25rem 0; }
 .details-grid strong { color: var(--text-dark); }
 
+/* Dark theme content overrides */
+html[data-theme="dark"] section {
+    background-color: var(--background-medium-dark);
+    border-left-color: var(--secondary-color-dark);
+    box-shadow: var(--shadow-sm-dark);
+}
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+    color: var(--text-dark-dark);
+}
+html[data-theme="dark"] .page-title-action h2 { color: var(--text-dark-dark); }
+html[data-theme="dark"] .details-grid {
+    background-color: var(--background-medium-dark);
+    box-shadow: var(--shadow-md-dark);
+}
+html[data-theme="dark"] .details-grid strong { color: var(--primary-color-dark); }
+
 /* --- Footer --- */
 footer {
     background-color: var(--text-dark);
@@ -103,6 +164,12 @@ footer {
     font-size: 0.9em;
 }
 footer a { color: var(--accent-color); }
+
+html[data-theme="dark"] footer {
+    background-color: #010409;
+    color: var(--secondary-color-dark);
+}
+html[data-theme="dark"] footer a { color: var(--accent-color-dark); }
 
 /* --- Dashboard Specific (index.html) --- */
 #patient-list-container {
@@ -122,6 +189,13 @@ footer a { color: var(--accent-color); }
 .patient-card p { font-size: 0.9em; margin-bottom: 0.75rem; color: var(--secondary-color); }
 .patient-card a { margin-top: auto; /* Pushes link to bottom */ }
 
+html[data-theme="dark"] .patient-card {
+    background-color: var(--background-medium-dark);
+    box-shadow: var(--shadow-md-dark);
+}
+html[data-theme="dark"] .patient-card h3 { color: var(--primary-color-dark); }
+html[data-theme="dark"] .patient-card p { color: var(--secondary-color-dark); }
+
 /* --- Patient Detail Specific (patient-detail.html) --- */
 #patient-profile-section .profile-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
 .profile-pic { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--border-color); }
@@ -139,6 +213,12 @@ footer a { color: var(--accent-color); }
 #sessions-container li { border-left-color: var(--secondary-color); }
 #goals-container li strong, #sessions-container li strong { display: block; font-size: 0.8em; color: var(--secondary-color); margin-bottom: 0.1rem; }
 
+html[data-theme="dark"] #goals-container li,
+html[data-theme="dark"] #sessions-container li {
+    background-color: var(--background-medium-dark);
+    box-shadow: var(--shadow-md-dark);
+}
+
 /* --- Modal Specific --- */
 dialog {
     border: 1px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow-md);
@@ -154,12 +234,24 @@ dialog::backdrop { background-color: rgba(0,0,0,0.5); backdrop-filter: blur(2px)
 .close-modal { background: none; border: none; color: var(--text-on-dark-bg); font-size: 1.5rem; cursor: pointer; }
 .modal-body { padding: 1rem 1.5rem; }
 
+html[data-theme="dark"] dialog {
+    background-color: var(--background-medium-dark);
+    color: var(--text-dark-dark);
+    border-color: var(--border-color-dark);
+}
+html[data-theme="dark"] .modal-header {
+    background-color: var(--primary-color-dark);
+    color: var(--text-on-dark-bg-dark);
+}
+html[data-theme="dark"] .modal-header h3 { color: var(--text-on-dark-bg-dark); }
+html[data-theme="dark"] .close-modal { color: var(--text-on-dark-bg-dark); }
+
 /* --- Form Specific (log-session.html & thank-you.html) --- */
 form { background-color: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: var(--shadow-md); }
 fieldset { border: 1px solid var(--border-color); border-radius: 5px; padding: 1rem; margin-bottom: 1.5rem; }
 legend { font-weight: bold; color: var(--text-dark); padding: 0 0.5rem; }
 label { display: block; margin-bottom: 0.3rem; font-weight: 500; font-size: 0.9em; }
-input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="number"], select, textarea {
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="number"], input[type="url"], select, textarea {
     width: 100%; padding: 0.6rem; margin-bottom: 1rem; border: 1px solid var(--border-color);
     border-radius: 4px; font-family: inherit; font-size: 1em;
 }
@@ -176,6 +268,125 @@ textarea { resize: vertical; min-height: 80px; }
 .submit-btn:hover { background-color: #27ae60; }
 #submission-summary { margin-top: 1.5rem; }
 
+html[data-theme="dark"] form,
+html[data-theme="dark"] #submission-summary {
+    background-color: var(--background-medium-dark);
+    box-shadow: var(--shadow-md-dark);
+}
+html[data-theme="dark"] input[type="text"],
+html[data-theme="dark"] input[type="email"],
+html[data-theme="dark"] input[type="tel"],
+html[data-theme="dark"] input[type="date"],
+html[data-theme="dark"] input[type="number"],
+html[data-theme="dark"] input[type="url"],
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+    background-color: #2D333B;
+    color: var(--text-dark-dark);
+    border-color: var(--border-color-dark);
+}
+html[data-theme="dark"] input:focus,
+html[data-theme="dark"] select:focus,
+html[data-theme="dark"] textarea:focus {
+    border-color: var(--primary-color-dark);
+    box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.3);
+}
+html[data-theme="dark"] ::placeholder {
+    color: #8B949E;
+}
+
+/* --- Settings Page Specific Styles --- */
+#appearance-settings .setting-item,
+#data-management-settings .setting-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+    background-color: rgba(0,0,0,0.02);
+    border-radius: 4px;
+}
+html[data-theme="dark"] #appearance-settings .setting-item,
+html[data-theme="dark"] #data-management-settings .setting-item {
+    background-color: rgba(255,255,255,0.03);
+}
+
+#appearance-settings label[for="theme-toggle"] {
+    font-weight: 500;
+}
+.setting-note {
+    font-size: 0.85em;
+    color: var(--secondary-color);
+    margin-left: 1rem;
+}
+html[data-theme="dark"] .setting-note {
+    color: var(--secondary-color-dark);
+}
+
+/* Theme Toggle Switch CSS */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 26px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+html[data-theme="dark"] input:checked + .slider {
+    background-color: var(--accent-color-dark);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--accent-color);
+}
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+#current-theme-label {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.danger-btn {
+    background-color: var(--danger-color);
+}
+.danger-btn:hover {
+    filter: brightness(0.9);
+    background-color: var(--danger-color);
+}
 
 /* --- Responsive Navigation & Layout --- */
 @media (max-width: 768px) {

@@ -1,6 +1,5 @@
 import {
-  getThemePreference,
-  setThemePreference,
+  getThemePreference /*, setThemePreference */,
 } from "./utils/localStorageManager.js";
 
 // --- Responsive Navigation (Hamburger Menu) ---
@@ -74,19 +73,24 @@ if (document.body.id === "dashboard-page") {
     console.error("Failed to load log session form script:", err)
   );
 } else if (document.body.id === "thank-you-page") {
-  import("./pages/thankYou.js").catch((err) =>
+  import("../scripts/pages/thankYou.js").catch((err) =>
     console.error("Failed to load thank you script:", err)
   );
-} else if (document.body.id === 'add-patient-page') {
-    import('../pages/addPatientForm.js').catch(err => console.error("Failed to load add patient form script:", err));
-} else if (document.body.id === 'add-patient-thank-you-page') {
-    import('../pages/addPatientThankYou.js').catch(err => console.error("Failed to load add patient thank you script:", err));
+} else if (document.body.id === "add-patient-page") {
+  import("../scripts/pages/addPatientForm.js").catch((err) =>
+    console.error("Failed to load add patient form script:", err)
+  );
+} else if (document.body.id === "add-patient-thank-you-page") {
+  import("../scripts/pages/addPatientThankYou.js").catch((err) =>
+    console.error("Failed to load add patient thank you script:", err)
+  );
+} else if (document.body.id === "settings-page") {
+  import("../scripts/pages/settings.js").catch((err) =>
+    console.error("Failed to load settings script:", err)
+  );
 }
 
-// Initialize theme (example of another LS use)
-getThemePreference();
-// You could add a theme toggle button that calls setThemePreference
-// e.g. document.getElementById('theme-toggle').addEventListener('click', () => {
-//    const currentTheme = getThemePreference();
-//    setThemePreference(currentTheme === 'light' ? 'dark' : 'light');
-// });
+// Initialize theme on every page load
+document.addEventListener("DOMContentLoaded", () => {
+  getThemePreference(); // This will read LS/system and apply data-theme to <html>
+});
